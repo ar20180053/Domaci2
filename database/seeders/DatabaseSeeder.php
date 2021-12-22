@@ -22,6 +22,7 @@ class DatabaseSeeder extends Seeder
         Genre::truncate();
 
         $user = User::factory()->create();
+        $user2 = User::factory()->create();
         $g1 = Genre::factory()->create();
         $g2 = Genre::factory()->create();
         Movie::factory(4)->create([
