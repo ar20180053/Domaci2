@@ -27,11 +27,11 @@ class DatabaseSeeder extends Seeder
         $g2 = Genre::factory()->create();
         Movie::factory(4)->create([
             'user_id' => $user->id,
-            'genre_id' => $g1->id,
+            'genre_id' => $g2->id,
         ]);
         Movie::factory(3)->create([
-            'user_id' => $user->id,
-            'genre_id' => $g2->id,
+            'user_id' => $user2->id,
+            'genre_id' => $g1->id,
         ]);
 
     }
