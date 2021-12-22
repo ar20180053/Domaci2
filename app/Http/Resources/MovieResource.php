@@ -21,7 +21,7 @@ class MovieResource extends JsonResource
             'id' => $this->resource->id,
             'name'=> $this->resource->name,
             'duration'=> $this->resource->duration,
-            'user_id'=> new UserResource($this->resource->user),
+            'user'=> new UserResource($this->resource->user),
             'genre_id'=> $this->resource->genre_id
         ];
     }
