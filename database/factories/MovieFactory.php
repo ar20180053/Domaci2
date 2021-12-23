@@ -16,10 +16,10 @@ class MovieFactory extends Factory
     public function definition()
     {
         return [
-            'name'=>$this->faker->name(),
-            'duration'=>$this->faker->text(),
-            'user_id'=>User::factory(),
-            'genre_id'=>Genre::factory(),
+            'name' => $this->faker->name(),
+            'duration' => $this->faker->numberBetween(80, 180),
+            'user_id' => User::factory(),
+            'genre_id' => Genre::factory(),
         ];
     }
 }
