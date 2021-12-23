@@ -43,4 +43,3 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::post('/logout', [AuthController::class, 'logout']);
 });
 // Route::resource('movies', MovieController::class)->only(['index']);
-

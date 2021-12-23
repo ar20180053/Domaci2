@@ -13,13 +13,13 @@ class AuthController extends Controller
 {
     public function register(Request $req)
     {
-        $validator = Validator::make($req->all(),[
+        $validator = Validator::make($req->all(), [
             'name' => 'required|string|max:100',
             'email' => 'required|string|max:150|email|unique:users',
             'password' => 'required|string|min:6',
 
         ]);
-        if($validator->fails()){
+        if ($validator->fails()) {
             return response()->json($validator->errors());
         }
         $user = User::create([
@@ -28,7 +28,7 @@ class AuthController extends Controller
             'password' => Hash::make($req->password)
         ]);
         $token = $user->createToken('auth-token')->plainTextToken;
-        return response()->json(['data'=>$user, 'access_token'=>$token, 'token_type'=> 'Bearer']);
+        return response()->json(['data' => $user, 'access_token' => $token, 'token_type' => 'Bearer']);
     }
 
     public function login(request $req)
@@ -49,5 +49,4 @@ class AuthController extends Controller
             'message' => 'You are logged out and the token is deleted!'
         ];
     }
-
 }
